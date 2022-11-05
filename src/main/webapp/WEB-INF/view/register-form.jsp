@@ -9,7 +9,8 @@
 <%--    <jsp:include page="/WEB-INF/view/layouts/nav.jsp"/>--%>
     <div id="container">
         <i>กรอกข้อมูลในฟอร์ม. เครื่องหมายดอกจัน (*) หมายถึงห้ามว่าง</i><br><br>
-        <form:form action="${pageContext.request.contextPath}/login/save" modelAttribute="login" method="POST">
+
+        <form:form action="${pageContext.request.contextPath}/login/save" modelAttribute="User" method="POST">
             <table>
                 <colgroup>
                     <col style="width: 160px;">
@@ -17,13 +18,16 @@
                 </colgroup>
                 <tbody>
                 <tr><td><label>ชื่อ:</label></td>
-                    <td><form:input path="username"/> </td>
+                    <td><form:input path="dtype"/> </td>
                 </tr>
-                <tr><td><label>รหัสผ่าน:</label></td>
-                    <td><form:input path="password"/> </td>
+                <tr><td><label>ชื่อ:</label></td>
+                    <td><form:input path="firstName"/> </td>
                 </tr>
-                <tr><td><label>ยืนยันรหัสผ่าน:</label></td>
-                    <td><form:input path="confirmPassword"/> </td>
+                <tr><td><label>นามสกุล:</label></td>
+                    <td><form:input path="lastName"/> </td>
+                </tr>
+                <tr><td><label>ที่อยู่:</label></td>
+                    <td><form:input path="address"/> </td>
                 </tr>
                     <td>
                         <input type="submit" value="บันทึก" class="save"/>

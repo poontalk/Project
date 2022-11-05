@@ -1,6 +1,7 @@
 package org.itsci.project.controller;
 
 import org.itsci.project.model.Login;
+import org.itsci.project.model.User;
 import org.itsci.project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -43,14 +44,15 @@ public class LoginController {
     @GetMapping("/create")
     public String showFormForAdd(Model model) {
         model.addAttribute("title", "เพิ่ม" + title);
-        model.addAttribute("login", new Login());
+        model.addAttribute("User", new User());
+        model.addAttribute("Login", new Login());
         return "register-form";
     }
 
-//    @RequestMapping(path="/save", method = RequestMethod.POST)
-//    public String processForm(@ModelAttribute("login")Login login ) {
-//        UserService.save
-//        return "redirect:/home";
-//    }
+    @RequestMapping(path="/save", method = RequestMethod.POST)
+    public String processForm(@ModelAttribute("User")User user ) {
+        userService.saveUser(user);
+        return "redirect:/home";
+    }
 
 }

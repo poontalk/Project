@@ -17,6 +17,7 @@ import java.beans.PropertyVetoException;
 import java.util.Properties;
 
 @Configuration
+@EnableTransactionManagement
 @PropertySource("classpath:persistence.properties")
 public class HibernateConf {
     @Autowired

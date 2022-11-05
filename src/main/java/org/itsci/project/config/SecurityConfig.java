@@ -12,7 +12,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests(configurer -> {
-
+            //configurer.anyRequest().authenticated();
+            configurer.antMatchers("/product/**").hasRole("MANAGER")
+                    .antMatchers("/shop/**").hasRole("MANAGER")
+                    .antMatchers("/user/**").hasRole("ADMIN");
         });
         http.formLogin(configurer -> {
                     try {
