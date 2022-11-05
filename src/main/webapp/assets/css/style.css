@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Fredoka:wght@400;500&family=Noto+Sans+Thai:wght@300&display=swap%27');
+body{
+    margin: 0%;
+    background-color: #f6f8fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+.slider{
+    width: 80%;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 12%;
+}
+
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img{
+    width: 100%;
+    height: 500px;
+}
+
+/* css for manual slide navigation */
+
+.navigation-manual{
+    position: absolute;
+    width: 1%;
+    margin-top: -450px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.manual-btn{
+    border: 2px solid white ;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 150%;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background-color: #ffffff;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+/* css for automatic navigation */
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 1%;
+    justify-content: space-around;
+    margin-top: 50px;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.navigation-auto div{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 150%;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: #ffffff;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: #ffffff;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: #ffffff;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: #ffffff;
+}
+
+/* header selection */
+.header-selection-movie{
+    color: #2d64cf;
+}
+
+.selection-movie{
+    width: 100%;
+    height: auto;
+}
+/* บล็อกรายการหนัง */
+.box01{
+    width: 215px;
+    height: 355px;
+    margin: 40px 40px 0 0;
+    background-color: #ffffff;
+    padding: 15px;
+}
+
+.box01:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.img-selection{
+    width: 215px;
+    height: 319px;
+    margin-top: -45px;
+}
+
+.ribbon-text{
+    width: auto;
+    height: 20px;
+    background-color: #A22428;
+    margin-top: -15px;
+}
+
+.date-on-air{
+    width: auto;
+    color: #2d94e4;
+    height: 10px;
+
+}
+
+p{
+    font-size: 14px;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* sponsor */
+.sponsor{
+    margin: 50px -190px 0px 285px;
+}
+.background-promotion{
+    width: 100%;
+    height: 223px;
+    margin-top: 30px;
+    background-color: #498AC4;
+    padding-top: 60px
+}
+/* หัวPromotionท้ังหมด */
+.Textsponspor{
+    width: 350px;
+    color: #ffffff;
+    height: fit-content;
+}
+
+/* promotion */
+.selection-promotion{
+    margin-top: -90px;
+    margin-left: 6%;
+    width: 1360px;
+    height: 1030px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.promotion-box{
+    width: 255px;
+    height: 420px;
+    margin: 40px 40px 0 0;
+    background-color: #ffffff;
+    padding: 15px;
+}
+.promotion-box-last{
+    width: 255px;
+    height: 420px;
+    margin:40px 0 0 0;
+    background-color: #ffffff;
+    padding: 15px;
+}
+.promotion-header-info {
+    width: auto;
+    color: #2d64cf;
+    height: auto;
+    font-size: 16px ;
+    font-weight: bold;
+}
+/* ลิงก์Promotionท้ังหมด */
+.promotion-All{
+    width: 1230px;
+    height: 55px;
+    border: 1px solid black;
+    align-items: center;
+    font-weight: bold;
+}
+.BG-promotion{
+    width: 100%;
+    height: 1030px;
+    background-color: #ffffff;
+}
+
+/* News */
+.header-news-feed{
+    width: 80%;
+    height: auto;
+    padding-left: 160px;
+    color: #2d64cf;
+}
+.news{
+    width: 1360px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-left: 4%;
+}
+/* บล็อกข่าว  */
+.box-news{
+    width: 400px;
+    height: 480px;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-right: 30px;
+}
+.img-selection-news{
+    margin-top: 0px;
+}
+.news-header-info{
+    margin-top: 8px;
+    font-size: 16px ;
+    color: #2d64cf;
+    font-weight: bold;
+}
+.news-info{
+    margin-top: -10px;
+    font-weight: bold;
+}
+.news-date{
+    color: #B89B98;
+}
+
+/* slide news */
+.colunm-news{
+    width: 260px;
+    height: 460px;
+}
+.col-news{
+    width: 260px;
+    height: 250px;
+    overflow: hidden;
+}
+.col-news figure img{
+    width: 260px;
+    height: 250px;
+    float: left;
+}
+.col-news figure{
+    position: relative;
+    width: 500%;
+    margin: 0px;
+    left: 0px;
+    animation: col-news 20s infinite linear;
+}
+@keyframes col-news{
+    0%{left: 0%;}
+    15%{left: 0%;}
+    20%{left: -100%;}
+    35%{left: -100%;}
+    40%{left: -200%;}
+    60%{left: -200%;}
+    65%{left: -300%;}
+    80%{left: -300%;}
+    85%{left: -400%;}
+    100%{left: -400%;}
+}
+
+/* news-2 */
+.news-2{
+    width: 1260px;
+    margin-top: 50px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-left: 9.5%;
+}
+/* บล็อกข่าว  */
+.box-news-2{
+    width: 370px;
+    height: 470px;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-right: 30px;
+}
+.img-selection-news-2 img{
+    width: 370px;
+}
+.news-all{
+    width: 1230px;
+    height: 55px;
+    margin: 40px 0px 150px 9.5%;
+    border: 1px solid black;
+    font-weight: bold;
+}
