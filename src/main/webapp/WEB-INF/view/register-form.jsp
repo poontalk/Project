@@ -27,10 +27,16 @@
                 <tr><td><label>ที่อยู่:</label></td>
                     <td><form:input path="address"/> </td>
                 </tr>
+                <tr><td><label>ชื่อผู่ใช้งาน:</label></td>
+                    <td><form:input path="username"/> </td>
+                </tr>
+                <tr><td><label>รหัสผ่าน:</label></td>
+                    <td><form:input path="password"/> </td>
+                </tr>
                     <td>
                         <input type="submit" value="บันทึก" class="save"/>
                         <input type="button" value="ยกเลิก"
-                               onclick="window.location.href='list'; return false;"
+                               onclick="window.location.href='logins'; return false;"
                                class="cancel-button"
                         />
                     </td>

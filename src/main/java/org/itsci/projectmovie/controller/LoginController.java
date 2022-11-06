@@ -2,6 +2,7 @@ package org.itsci.projectmovie.controller;
 
 import org.itsci.projectmovie.model.Login;
 import org.itsci.projectmovie.model.User;
+import org.itsci.projectmovie.service.LoginService;
 import org.itsci.projectmovie.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -25,7 +26,8 @@ public class LoginController {
 
     @Autowired
     private UserService userService;
-
+    @Autowired
+    private LoginService loginService;
     @GetMapping("/logins")
     public String loginPage(Model model){
         model.addAttribute("title", "ลงชื่อเข้าสู่ระบบ");
@@ -50,9 +52,10 @@ public class LoginController {
     }
 
     @RequestMapping(path="/save", method = RequestMethod.POST)
-    public String processForm(@ModelAttribute("User")User user ) {
+    public String processForm(@ModelAttribute("User")User user ,Login login) {
         userService.saveUser(user);
-        return "redirect:/home";
+        loginService.saveLogin(login);
+        return "redirect:/login-page";
     }
 
 }
