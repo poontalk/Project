@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
+import java.util.List;
 
 @Entity
 @Table(name = "Movies")
@@ -49,6 +50,12 @@ public class Movies {
     @ManyToOne
     @JoinColumn(name = "Cid")
     private Category category;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinTable(name = "movie_showtime",
+            joinColumns= { @JoinColumn(name = "movie_id")},
+            inverseJoinColumns= { @JoinColumn(name = "showtime_id")})
+    private List<Showtime> showtimes;
 
     public int getMid() {
         return Mid;
@@ -112,5 +119,13 @@ public class Movies {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public List<Showtime> getShowtimes() {
+        return showtimes;
+    }
+
+    public void setShowtimes(List<Showtime> showtimes) {
+        this.showtimes = showtimes;
     }
 }

@@ -1,8 +1,4 @@
 /* css for manual slide navigation */
-.container{
-    background-color: #f5fbff;
-    width: 100%;
-}
 .navigation-manual{
     position: absolute;
     width: 1%;

@@ -2,11 +2,13 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
-<head><title>${title}</title></head>
+<head>
+    <title>${title}</title>
+</head>
 <body>
 <jsp:include page="/WEB-INF/view/layouts/Hader.jsp"/>
 <jsp:include page="/WEB-INF/view/layouts/Nav.jsp"/>
-<div id="header"><h1>${title}</h1></div>
+<center><h1>${title}</h1></center>
 <div class="container">
     <div id="container">
         <i>กรอกข้อมูลในฟอร์ม. เครื่องหมายดอกจัน (*) หมายถึงห้ามว่าง</i><br><br>

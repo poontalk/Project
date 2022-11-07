@@ -77,7 +77,7 @@
 <!--------------------------------------------------------------------------->
 <!-- สไลด์ภาพข้อมูล -->
 <!-- image slider start -->
-<div class="container">
+
     <div class="slider">
         <div class="slides">
             <!-- radio button start -->
@@ -161,7 +161,6 @@
             <br><br>First Class <br>(Private box)
         </div>
     </div>
-</div>
     <jsp:include page="/WEB-INF/view/layouts/Footer.jsp"/>
 </body>
 </html>
