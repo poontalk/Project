@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "showtime")
@@ -35,6 +36,11 @@ public class Showtime {
     @NotNull
     @Column(name = "time",nullable = false)
     private String Time;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "movie_showtime",joinColumns= { @JoinColumn(name = "showtime_id")},
+            inverseJoinColumns= { @JoinColumn(name = "movie_id")})
+    private List<Movies> movies;
 
     public int getSid() {
         return Sid;
@@ -66,5 +72,13 @@ public class Showtime {
 
     public void setTime(String time) {
         Time = time;
+    }
+
+    public List<Movies> getMovies() {
+        return movies;
+    }
+
+    public void setMovies(List<Movies> movies) {
+        this.movies = movies;
     }
 }

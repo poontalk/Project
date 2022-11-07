@@ -21,8 +21,8 @@ public class ShowtimeDaoImpl implements ShowtimeDao{
     public List<Showtime> getShowtime() {
         Session session = sessionFactory.getCurrentSession();
         Query<Showtime> query = session.createQuery("from Showtime", Showtime.class);
-        List<Showtime> Showtime = query.getResultList();
-        return Showtime;
+        List<Showtime> showtime = query.getResultList();
+        return showtime;
     }
 
     @Override
@@ -45,4 +45,5 @@ public class ShowtimeDaoImpl implements ShowtimeDao{
         query.setParameter("id", id);
         query.executeUpdate();
     }
+
 }

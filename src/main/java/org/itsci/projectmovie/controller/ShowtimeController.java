@@ -34,7 +34,7 @@ public class ShowtimeController {
         return "movieST/showtime-form";
     }
 
-    @GetMapping("/{id}/update")
+    @GetMapping("/{sid}/update")
     public String showFormForUpdate(@PathVariable("sid") int id, Model model) {
         Showtime showtime = ShowtimeService.getShowtime(Integer.valueOf(id));
         model.addAttribute("title", "แก้ไข" + title);
@@ -43,8 +43,7 @@ public class ShowtimeController {
     }
 
     @RequestMapping(path="/save", method =  RequestMethod.POST)
-    public String saveShowtime(@Valid @ModelAttribute("showtime") Showtime showtime,
-                               BindingResult bindingResult , Model model) {
+    public String saveShowtime(@Valid @ModelAttribute("showtime") Showtime showtime, BindingResult bindingResult ,Model model) {
         if (bindingResult.hasErrors()){
             model.addAttribute("title","มีข้อผิดพลาดในการบันทึก" + title);
             return "movieST/showtime-form";
@@ -60,7 +59,7 @@ public class ShowtimeController {
         }
     }
 
-    @GetMapping("/{id}/delete")
+    @GetMapping("/{sid}/delete")
     public String deleteShowtime(@PathVariable("sid") int id) {
         ShowtimeService.deleteShowtime(id);
         return "redirect:/movieST/list";

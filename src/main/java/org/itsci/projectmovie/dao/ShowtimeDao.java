@@ -1,6 +1,5 @@
 package org.itsci.projectmovie.dao;
 
-import org.itsci.projectmovie.model.Movies;
 import org.itsci.projectmovie.model.Showtime;
 
 import java.util.List;

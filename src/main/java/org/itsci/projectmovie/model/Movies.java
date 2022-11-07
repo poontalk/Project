@@ -55,7 +55,7 @@ public class Movies {
     @JoinTable(name = "movie_showtime",
             joinColumns= { @JoinColumn(name = "movie_id")},
             inverseJoinColumns= { @JoinColumn(name = "showtime_id")})
-    private List<Showtime> showtimes;
+    private List<Showtime> showtime;
 
     public int getMid() {
         return Mid;
@@ -122,10 +122,10 @@ public class Movies {
     }
 
     public List<Showtime> getShowtimes() {
-        return showtimes;
+        return showtime;
     }
 
-    public void setShowtimes(List<Showtime> showtimes) {
-        this.showtimes = showtimes;
+    public void setShowtimes(List<Showtime> showtime) {
+        this.showtime = showtime;
     }
 }
