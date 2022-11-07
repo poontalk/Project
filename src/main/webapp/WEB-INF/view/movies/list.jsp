@@ -5,13 +5,13 @@
 <html>
 <head>
     <title>${title}</title>
+    <link href="${pageContext.request.contextPath}/assets/css/style-movie.css" rel="stylesheet"/>
 </head>
 <body>
 <jsp:include page="/WEB-INF/view/layouts/Hader.jsp"/>
 <jsp:include page="/WEB-INF/view/layouts/Nav.jsp"/>
-<h1>${title}</h1>
-<input type="button" value="อัพเดต${title}"
-       onclick="window.location.href='${pageContext.request.contextPath}/movies/create';
+<center><h1>${title}</h1></center>
+<input type="button" value="อัพเดต${title}" onclick="window.location.href='${pageContext.request.contextPath}/movies/create';
                return false;" class="add-button"/>
 <div class="container">
     <table>

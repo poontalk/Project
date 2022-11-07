@@ -1,0 +1,12 @@
+
+
+
+.add-button{
+    width: 200px;
+    height: 40px;
+    border: #2E72D0 5px solid;
+    background-color: #6b9ed4;
+    color: white;
+    border-radius: 5%;
+    margin-left: 80%;
+}
