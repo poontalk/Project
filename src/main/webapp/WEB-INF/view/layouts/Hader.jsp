@@ -8,7 +8,7 @@
     <link href="${pageContext.request.contextPath}/assets/css/style-h-f.css" rel="stylesheet"/>
 </head>
 <body>
-<form:form action="${pageContext.request.contextPath}/logout" method="POST" name="frmLogout"></form:form>
+
 <div style="background-color: white">
     <table style="width:100%;">
         <td class="div-Header"></td>
@@ -27,7 +27,7 @@
                         </security:authorize>
                             <security:authorize access="isAuthenticated()">
                                 User: <security:authentication property="principal.username"/>
-                                <li><a href="#" onclick="javascript: frmLogout.submit();">ลงชื่อออกจากระบบ</a></li>
+                                <li><a onclick="javascript: frmLogout.submit();">ลงชื่อออกจากระบบ</a></li>
                             </security:authorize></td>
 
                 </table>
