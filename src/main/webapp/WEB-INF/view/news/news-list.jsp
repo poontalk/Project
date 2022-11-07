@@ -22,8 +22,8 @@
             </tr>
             <tr><td>${Newsfeeds.headlines}<br></td></tr>
             <tr><td>${Newsfeeds.detail}</td></tr>
-            <tr><td>${Newsfeeds.newsDate}${Newsfeeds.newsTime}</td></tr>
-            <tr><td><a href="${pageContext.request.contextPath}/news${Newsfeeds.id}/update">${Newsfeeds.code}</a></td></tr>
+            <tr><td>วันที่ : ${Newsfeeds.newsDate}&nbsp;${Newsfeeds.newsTime}</td></tr>
+            <tr><td><a href="${pageContext.request.contextPath}/news/${Newsfeeds.id}/update">${Newsfeeds.code}</a></td></tr>
 
         </tbody>
     </table>

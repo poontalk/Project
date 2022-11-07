@@ -45,8 +45,13 @@
                 <tr><td><label></label></td>
                     <td>
                         <input type="submit" value="บันทึก" class="save"/>
+                        <input type="button" value="ลบ"
+                               onclick="if((confirm('คุณแน่ใจหรือว่าต้องการลบข่าวนี้?'))) {
+                                       window.location.href='${pageContext.request.contextPath}/news/${Newsfeeds.id}/delete'; return false; }"
+                               class="cancel-button"
+                        />
                         <input type="button" value="ยกเลิก"
-                               onclick="window.location.href='list'; return false;"
+                               onclick="window.location.href='${pageContext.request.contextPath}/news/list'; return false;"
                                class="cancel-button"
                         />
                     </td>
