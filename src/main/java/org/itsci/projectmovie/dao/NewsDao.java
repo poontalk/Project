@@ -4,7 +4,7 @@ import org.itsci.projectmovie.model.News;
 
 import java.util.List;
 
-public interface NewsDoa {
+public interface NewsDao {
     List<News> getNewsFeed();
     void saveNews(News news);
     News getNews(int id);

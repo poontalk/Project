@@ -5,12 +5,11 @@ import org.itsci.projectmovie.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
-import java.text.AttributedString;
+import javax.validation.Valid;
+
 
 @Controller
 @RequestMapping("/news")
@@ -28,6 +27,14 @@ public class NewController {
         return "news/list";
     }
 
+    @GetMapping("{id}/lists")
+    public String showNewslist (@PathVariable ("id") int id,Model model) {
+        News news = newsService.getNews(id);
+        model.addAttribute("title", "รายละเอียด" + title);
+        model.addAttribute("Newsfeeds",news);
+        return "news/news-list";
+    }
+
     @GetMapping("/create")
     public String NewsFormForAdd(Model model) {
         model.addAttribute("title", "เพิ่ม" + title);
@@ -36,9 +43,27 @@ public class NewController {
     }
 
     @RequestMapping(path="/save", method = RequestMethod.POST)
-    public String saveNews(@ModelAttribute("news") News news) {
-        newsService.saveNews(news);
-        return "redirect:/news/list";
+    public String saveNews(@Valid @ModelAttribute("Newsfeeds") News news,BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("title", "มีข้อผิดพลาดในการบนัทึก" + title);
+            return "news/news-form";
+        } else {
+            News dbNews = newsService.getNews(news.getId());
+            if (dbNews != null) {
+                newsService.updateNews(dbNews, news);
+            } else {
+                newsService.saveNews(news);
+            }
+            return "redirect:/news/list";
+        }
     }
 
+    @GetMapping("/{id}")
+    public String NewsFormForUpdate(@PathVariable ("id") int id, Model model) {
+        News news = newsService.getNews(id);
+        model.addAttribute("title", "แก้ไข" + title);
+        model.addAttribute("Newsfeeds", news);
+        return "news/news-form";
+    }
+    
 }

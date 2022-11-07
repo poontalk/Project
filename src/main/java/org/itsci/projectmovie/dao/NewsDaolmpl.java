@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class NewsDaolmpl implements NewsDoa{
+public class NewsDaolmpl implements NewsDao{
 
     @Autowired
     SessionFactory sessionFactory;
