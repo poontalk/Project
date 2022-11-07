@@ -42,6 +42,7 @@
                         <input type="button" value="ลบ" onclick="if((confirm('คุณแน่ใจทหรืออไม่ที่จะลบหนังเรื่องนี้?'))) {
                             window.location.href='${pageContext.request.contextPath}/showtime/${showtime.sid}/delete'; return false; }"
                                class="cancel-button"/>
+
                     </td>
                 </tr>
                 </tbody>

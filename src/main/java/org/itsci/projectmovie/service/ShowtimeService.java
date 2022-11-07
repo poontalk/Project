@@ -7,8 +7,8 @@ import java.util.List;
 public interface ShowtimeService {
 
     List<Showtime> getShowtime();
-    public void saveShowtime(Showtime showtime);
-    Showtime getShowtime(int id);
-    void deleteShowtime(int id);
+    void saveShowtime(Showtime showtime);
+    Showtime getShowtime(int Sid);
+    void deleteShowtime(int Sid);
     void updateShowtime(Showtime ShowtimeEntity, Showtime showtime);
 }

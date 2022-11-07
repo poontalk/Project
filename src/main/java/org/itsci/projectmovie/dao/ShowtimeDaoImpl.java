@@ -21,8 +21,8 @@ public class ShowtimeDaoImpl implements ShowtimeDao{
     public List<Showtime> getShowtime() {
         Session session = sessionFactory.getCurrentSession();
         Query<Showtime> query = session.createQuery("from Showtime", Showtime.class);
-        List<Showtime> showtime = query.getResultList();
-        return showtime;
+        List<Showtime> Showtime = query.getResultList();
+        return Showtime;
     }
 
     @Override
@@ -32,18 +32,17 @@ public class ShowtimeDaoImpl implements ShowtimeDao{
     }
 
     @Override
-    public Showtime getShowtime(int id) {
+    public Showtime getShowtime(int Sid) {
         Session session = sessionFactory.getCurrentSession();
-        Showtime showtime = session.get(Showtime.class, id);
+        Showtime showtime = session.get(Showtime.class, Sid);
         return showtime;
     }
 
     @Override
-    public void deleteShowtime(int id) {
+    public void deleteShowtime(int Sid) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("delete from Showtime where Sid=:id");
-        query.setParameter("id", id);
+        Query query = session.createQuery("delete from Showtime where Sid=:Sid");
+        query.setParameter("Sid", Sid);
         query.executeUpdate();
     }
-
 }

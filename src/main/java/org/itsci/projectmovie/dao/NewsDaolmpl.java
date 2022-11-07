@@ -10,15 +10,14 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class NewsDaolmpl implements NewsDoa{
+public class NewsDaolmpl implements NewsDao{
 
     @Autowired
     SessionFactory sessionFactory;
     @Override
     public List<News> getNewsFeed() {
         Session session = sessionFactory.getCurrentSession();
-        Query<News> query = session.createQuery("from News",
-                News.class);
+        Query<News> query = session.createQuery("from News",News.class);
         List<News> categories = query.getResultList();
         return categories;
     }

@@ -15,7 +15,7 @@
     <div class="container">
 
         <input type="button" value="เพิมข่าว"
-               onclick="window.location.href='${pageContext.request.contextPath}/product/create'; return false;"
+               onclick="window.location.href='${pageContext.request.contextPath}/news/create'; return false;"
                class="add-button"
         />
 
@@ -23,14 +23,19 @@
             <thead>
             <tr>
                 <th>รูป</th>
-                <th>รหัสสินค้า</th>
+                <th>ชื่อ</th>
+
             </tr>
             </thead>
             <tbody>
             <c:forEach var="Newsfeed" items="${Newsfeeds}">
                 <tr>
                     <td>.............</td>
-                    <td>${Newsfeed.headlines}</td>
+
+                    <td><a href="${pageContext.request.contextPath}/news/${Newsfeed.id}/lists">
+                            ${Newsfeed.headlines}<br>
+                             ${Newsfeed.newsDate}${Newsfeed.newsTime}</a>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

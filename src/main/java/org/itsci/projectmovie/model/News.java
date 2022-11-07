@@ -12,30 +12,31 @@ import javax.validation.constraints.Pattern;
 public class News {
 
     @Id
-    @Column(name = "Nid",nullable = false)
+    @Column(name = "id",nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @GenericGenerator(name = "increment", strategy = "increment")
-    int Nid;
-
+    int id;
     @NotNull
     @Pattern(regexp="^N[0-9]{3}")
     @Column(name = "code",nullable = false)
     private String code;
-
+    @NotNull
+    @Column(name = "Detail",nullable = false)
+    private String Detail;
+    @Column(name = "NewsDate")
+    private String NewsDate;
+    @Column(name = "NewsTime")
+    private String  NewsTime;
     @NotNull
     @Column(name = "headlines",nullable = false)
     private String headlines;
 
-    @NotNull
-    @Column(name = "Detail",nullable = false)
-    private String Detail;
-
-    public int getNid() {
-        return Nid;
+    public int getId() {
+        return id;
     }
 
-    public void setNid(int nid) {
-        Nid = nid;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCode() {
@@ -60,5 +61,30 @@ public class News {
 
     public void setDetail(String detail) {
         Detail = detail;
+    }
+
+    public String getNewsDate() {
+        return NewsDate;
+    }
+
+    public void setNewsDate(String newsDate) {
+        NewsDate = newsDate;
+    }
+
+    public String getNewsTime() {
+        return NewsTime;
+    }
+
+    public void setNewsTime(String newsTime) {
+        NewsTime = newsTime;
+    }
+
+
+    public void fill(News news) {
+        this.code = news.getCode();
+        this.headlines = news.getHeadlines();
+        this.Detail = news.getDetail();
+        this.NewsDate = news.getNewsDate();
+        this.NewsTime = news.getNewsTime();
     }
 }

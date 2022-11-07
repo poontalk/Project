@@ -1,9 +1,12 @@
 package org.itsci.projectmovie.service;
 
+import org.itsci.projectmovie.dao.MovieDao;
 import org.itsci.projectmovie.dao.ShowtimeDao;
+import org.itsci.projectmovie.model.Category;
 import org.itsci.projectmovie.model.Showtime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -28,20 +31,20 @@ public class ShowtimeServiceImpl implements ShowtimeService{
 
     @Override
     @Transactional
-    public Showtime getShowtime(int id) {
-        return ShowtimeDao.getShowtime(id);
+    public Showtime getShowtime(int Sid) {
+        return ShowtimeDao.getShowtime(Sid);
     }
 
     @Override
     @Transactional
-    public void deleteShowtime(int id) {
-        ShowtimeDao.deleteShowtime(id);
+    public void deleteShowtime(int Sid) {
+        ShowtimeDao.getShowtime(Sid);
     }
 
     @Override
     @Transactional
     public void updateShowtime(Showtime ShowtimeEntity, Showtime showtime) {
         ShowtimeEntity.fill(showtime);
-        ShowtimeDao.saveShowtime(ShowtimeEntity);
+        saveShowtime(showtime);
     }
 }
