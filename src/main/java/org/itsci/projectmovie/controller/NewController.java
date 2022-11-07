@@ -58,12 +58,19 @@ public class NewController {
         }
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}/update")
     public String NewsFormForUpdate(@PathVariable ("id") int id, Model model) {
         News news = newsService.getNews(id);
         model.addAttribute("title", "แก้ไข" + title);
         model.addAttribute("Newsfeeds", news);
         return "news/news-form";
     }
-    
+
+    @GetMapping("/{id}/delete")
+    public String deleteNews(@PathVariable("id") int id) {
+        newsService.deleteNews(id);
+        return "redirect:/news/list";
+    }
+
+
 }
